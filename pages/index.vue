@@ -81,7 +81,7 @@ export default Vue.extend({
       curWordsArr: ['']
     }
     // word info
-    await axios.get('http://localhost:3000/words-res/all-words.json')
+    await axios.get('http://localhost:80/words-res/all-words.json')
       .then((res) => {
         result.wordsInfo = res.data
         result.wordsArr = Object.keys(res.data)

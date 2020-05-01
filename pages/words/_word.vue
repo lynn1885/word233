@@ -32,7 +32,7 @@ export default Vue.extend({
     }
 
     // word info
-    await axios.get('http://localhost:3000/words-res/all-words.json')
+    await axios.get('http://localhost:80/words-res/all-words.json')
       .then((res) => {
         result.curWordInfo = res.data[word]
       })
@@ -42,7 +42,7 @@ export default Vue.extend({
 
     // article
     if (word) {
-      await axios.get(`http://localhost:3000/words-res/${word}/index.html`)
+      await axios.get(`http://localhost:80/words-res/${word}/index.html`)
         .then((res) => {
           result.passageHtml = res.data
         })
@@ -59,8 +59,8 @@ export default Vue.extend({
     }
   },
   // url中比如传递单词信息, 否则跳转到404
-  // 如: http://localhost:3000/words/haha 就可以
-  // 如: http://localhost:3000/words 就不行
+  // 如: http://localhost:80/words/haha 就可以
+  // 如: http://localhost:80/words 就不行
   // 运行在服务器端
   validate ({ params }) {
     if (params.word) {

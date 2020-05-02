@@ -1,4 +1,4 @@
-const host = '39.106.108.222'
+const host = 'localhost'
 const port = 80
 
 module.exports = {

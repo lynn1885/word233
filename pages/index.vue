@@ -94,7 +94,17 @@ export default Vue.extend({
   },
   // 数据
   data () {
-    return {
+    interface IndexData {
+      searchWord: string,
+      pageSize: number,
+      currentPage: number,
+      wordsInfo: {
+        [index: string]: any,
+      },
+      wordsArr: string[],
+      curWordsArr: string[],
+    }
+    const d: IndexData = {
       searchWord: '',
       pageSize,
       currentPage: 1,
@@ -102,6 +112,7 @@ export default Vue.extend({
       wordsArr: [''], // asyncData
       curWordsArr: [''] // asyncData
     }
+    return d
   },
   watch: {
     currentPage (newPageSize) {
@@ -120,7 +131,7 @@ export default Vue.extend({
       let i = 0
       const maxNum = 10
       for (const word in this.wordsInfo) {
-        const wordInfo: any = this.wordsInfo[word]
+        const wordInfo = this.wordsInfo[word]
         if (word.includes(str) || wordInfo.meaning.includes(str)) {
           res.push({ value: `${word}  ${wordInfo.meaning}`, path: word })
           i++

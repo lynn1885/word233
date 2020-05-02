@@ -3,6 +3,8 @@
     "target": "es2018",
     "module": "esnext",
     "moduleResolution": "node",
+    // https://github.com/ElemeFE/element/issues/17329
+    "skipLibCheck": true,
     "lib": [
       "esnext",
       "esnext.asynciterable",

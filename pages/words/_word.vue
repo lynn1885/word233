@@ -13,8 +13,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import axios from 'axios'
-import ArticleTopBar from '@/components/ArticleTopBar'
-import ArticleTitle from '@/components/ArticleTitle'
+import ArticleTopBar from '@/components/ArticleTopBar/index.vue'
+import ArticleTitle from '@/components/ArticleTitle/index.vue'
 
 export default Vue.extend({
   components: {

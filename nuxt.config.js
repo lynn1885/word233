@@ -1,3 +1,4 @@
+const port = 80
 
 module.exports = {
   mode: 'universal',
@@ -17,17 +18,19 @@ module.exports = {
   },
   server: {
     host: '0.0.0.0',
-    port: 80 // default: 3000
+    port // default: 3000
   },
   /*
   ** Customize the progress-bar color
   */
+  loading: false,
   /*
   ** Global CSS
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    '@/assets/css/reset.scss'
+    '@/assets/css/reset.scss',
+    '@/assets/css/basic.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -53,6 +56,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: `http://localhost:${port}/`
   },
   /*
   ** Build configuration

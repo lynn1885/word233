@@ -1,15 +1,17 @@
+@import "@/assets/css/var.scss";
+
+// reset
 html, body {
   padding: 0;
   margin: 0;
-  background: rgb(252, 251, 249);
-  color: #333;
+  background: $main-bg;
+  color: $main-color;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-
 
 ul, li {
   padding: 0;

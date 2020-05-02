@@ -12,7 +12,6 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import axios from 'axios'
 import ArticleTopBar from '@/components/ArticleTopBar/index.vue'
 import ArticleTitle from '@/components/ArticleTitle/index.vue'
 
@@ -23,7 +22,7 @@ export default Vue.extend({
   },
 
   // 运行在服务器端
-  async asyncData ({ params }) {
+  async asyncData ({ params, app }) {
     const word = params.word
     const result = {
       word,
@@ -32,9 +31,9 @@ export default Vue.extend({
     }
 
     // word info
-    await axios.get('http://localhost:80/words-res/all-words.json')
-      .then((res) => {
-        result.curWordInfo = res.data[word]
+    await app.$axios.$get('words-res/all-words.json')
+      .then((res: any) => {
+        result.curWordInfo = res[word]
       })
       .catch(() => {
         console.error('获取单词json信息失败', word)
@@ -42,9 +41,9 @@ export default Vue.extend({
 
     // article
     if (word) {
-      await axios.get(`http://localhost:80/words-res/${word}/index.html`)
-        .then((res) => {
-          result.passageHtml = res.data
+      await app.$axios.$get(`words-res/${word}/index.html`)
+        .then((res: any) => {
+          result.passageHtml = res
         })
         .catch(() => {
           console.error('获取单词article失败', word)
@@ -72,6 +71,8 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
+@import "@/assets/css/var.scss";
+
 // root
 .word {
   padding: 0px 12px;
@@ -86,6 +87,7 @@ export default Vue.extend({
   line-height: 1.7;
   color: #333;
   padding-bottom: 40px;
+  overflow-x: hidden;
   // text
   .strong {
     font-weight: 600;
@@ -105,10 +107,17 @@ export default Vue.extend({
   // image
   img {
     width: 100%;
+    box-sizing: border-box;
     &.border {
       border: 2px solid #666;
     }
-    box-sizing: border-box;
+    &.original {
+      width: auto;
+    }
+    &.center {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   // audio
@@ -127,7 +136,7 @@ export default Vue.extend({
   // 记忆
   .memory, .addition {
     color: #666;
-    background: #f4f4f4;
+    background: $info-bg;
     border-radius: 4px;
     margin: 20px 0px;
     padding: 8px 10px 16px 10px;

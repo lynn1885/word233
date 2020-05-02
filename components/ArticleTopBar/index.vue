@@ -19,16 +19,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/css/var.scss";
+
 .article-top-bar {
-  color: #333;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgb(250, 243, 234);
-  box-shadow: 0px 0px 6px 0px #ddd;
-  display: flex;
-  height: 46px;
+  background: $em-bg;
+  box-shadow: $top-bar-shadow;
+  height: $top-bar-height;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;

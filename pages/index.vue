@@ -7,17 +7,20 @@
         size="small"
         suffix-icon="el-icon-search"
         :fetch-suggestions="querySearch"
-        placeholder="查单词"
+        placeholder="搜索功能暂不可用哦, 持续开发中~"
         :trigger-on-focus="false"
       />
     </div>
     <!-- 信息栏 -->
     <div class="info-bar">
-      <div class="item number">
-        累积收录: {{ wordsArr.length }} 个
+      <div class="tag number">
+        收录: {{ wordsArr.length }} 个  整理中...
       </div>
-      <div class="item offical-account">
+      <div class="tag offical-account">
         公众号: 奇怪的背单词
+      </div>
+      <div class="tag">
+        5.2 夏
       </div>
     </div>
 
@@ -26,23 +29,25 @@
       <li
         v-for="word of curWordsArr"
         :key="word"
-        class="word"
+        class="word-list-item"
         @click="gotoWordPage(word)"
       >
+        <!-- 左侧 -->
         <div class="left">
           <div class="title">
             {{ wordsInfo[word].title }}
           </div>
           <div class="info">
-            <div class="word item">
+            <div class="word tag">
               {{ word }}
             </div>
-            <div class="meaning item">
+            <div class="meaning tag">
               {{ wordsInfo[word].meaning }}
             </div>
           </div>
         </div>
         <div class="blank" />
+        <!-- 右侧 -->
         <div class="right">
           <img :src="/words-res/ + word + '/poster.jpg'">
         </div>
@@ -61,7 +66,6 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import axios from 'axios'
 import { mapMutations } from 'vuex'
 
 const pageSize = 10
@@ -74,17 +78,18 @@ interface WordInfo {
 
 export default Vue.extend({
   // 运行在服务器端
-  async asyncData () {
+  async asyncData ({ app }) {
     const result = {
       wordsInfo: null,
       wordsArr: [''],
       curWordsArr: ['']
     }
     // word info
-    await axios.get('http://localhost:80/words-res/all-words.json')
-      .then((res) => {
-        result.wordsInfo = res.data
-        result.wordsArr = Object.keys(res.data)
+
+    await app.$axios.$get('words-res/all-words.json')
+      .then((res: any) => {
+        result.wordsInfo = res
+        result.wordsArr = Object.keys(res)
         result.curWordsArr = result.wordsArr.slice(0, pageSize)
       })
       .catch(() => {
@@ -152,6 +157,8 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
+@import "@/assets/css/var.scss";
+
 // root
 .index {
   margin-bottom: 20px;
@@ -165,16 +172,16 @@ export default Vue.extend({
   top: 0;
   height: 46px;
   width: 100%;
-  background: rgb(250, 243, 234);
+  background: $em-bg;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 6px 0px #ddd;
+  box-shadow: $top-bar-shadow;
   .el-autocomplete {
     width: 96%;
   }
   /deep/ .el-input__inner {
     border: none;
-    background: rgb(252, 251, 249);
+    background: lighten($color: $main-bg, $amount: 1) ;
   }
 }
 
@@ -186,14 +193,6 @@ export default Vue.extend({
   height: 30px;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
-  color: #999;
-  .item {
-    padding: 2px 6px;
-    margin: 0px 2px;
-    background: #f4f4f4;
-    border-radius: 2px;
-  }
 }
 
 // 单词列表
@@ -201,13 +200,14 @@ export default Vue.extend({
   width: 100%;
   box-sizing: border-box;
 }
-.word {
+.word-list-item {
   display: flex;
   padding: 10px;
   border-bottom: 1.5px dashed #eee;
   &:hover {
-    background: #f4f4f4;
+    background: $info-bg;
   }
+  // 左侧
   .left {
     display: flex;
     flex-direction: column;
@@ -221,19 +221,12 @@ export default Vue.extend({
       display: flex;
       flex-grow: 1;
       align-items: center;
-      .item {
-        font-size: 13px;
-        padding: 2px 6px;
-        margin-right: 4px;
-        background: #f4f4f4;
-        border-radius: 2px;
-        color: #999;
-      }
     }
   }
   .blank {
     flex-grow: 1;
   }
+  // 右侧
   .right {
     width: 120px;
     overflow: hidden;
@@ -251,7 +244,12 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   /deep/.el-pagination .active {
-    background: rgb(241, 232, 220)!important;
+    background: darken($color: $em-bg, $amount: 3)!important;
+    color: $main-color!important;
+    font-weight: 300!important;
+  }
+  /deep/.el-pagination .number {
+    font-weight: 300!important;
   }
 }
 </style>

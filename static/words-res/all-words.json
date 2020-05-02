@@ -1,8 +1,19 @@
 {
+  "electron": {
+    "meaning": "n. 电子",
+    "title": "外国主持人教你三秒记住一个单词",
+    "stars": 3,
+    "scope": "TOEFL | SAT | GMAT | CET6 | CET4 | 考研"
+  },
   "chamber": {
     "meaning": "n. 房间",
     "title": "房间亲啵",
     "stars": 4
+  },
+  "mighty": {
+    "meaning": "a. 墙里的",
+    "title": "小短篇",
+    "stars": 3
   },
   "glade": {
     "meaning": "n. 林中空地",
@@ -23,6 +34,11 @@
     "meaning": "n/v. 窒息",
     "title": "震惊！竟然已经有3个人因此而死！",
     "stars": 4
+  },
+  "polygamy": {
+    "meaning": "n. 一夫多妻",
+    "title": "韦小宝: 我有7个老婆",
+    "stars": 3
   },
   "clove": {
     "meaning": "n. 丁香",

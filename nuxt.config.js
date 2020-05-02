@@ -1,4 +1,4 @@
-const host = '0.0.0.0'
+const host = '39.106.108.222'
 const port = 80
 
 module.exports = {
@@ -57,7 +57,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: `http://${host}:${port}/`
+    baseURL: `http://${host}:${port}`
   },
   /*
   ** Build configuration

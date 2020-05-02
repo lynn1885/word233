@@ -31,7 +31,7 @@ export default Vue.extend({
     }
 
     // word info
-    await app.$axios.$get('words-res/all-words.json')
+    await app.$axios.$get('/words-res/all-words.json')
       .then((res: any) => {
         result.curWordInfo = res[word]
       })
@@ -41,7 +41,7 @@ export default Vue.extend({
 
     // article
     if (word) {
-      await app.$axios.$get(`words-res/${word}/index.html`)
+      await app.$axios.$get(`/words-res/${word}/index.html`)
         .then((res: any) => {
           result.passageHtml = res
         })

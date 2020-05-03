@@ -7,20 +7,20 @@
         size="small"
         suffix-icon="el-icon-search"
         :fetch-suggestions="querySearch"
-        placeholder="搜索功能暂不可用哦, 持续开发中~"
+        placeholder="搜索功能暂不可用哦, 持续开发中~ 单词也在整理中"
         :trigger-on-focus="false"
       />
     </div>
     <!-- 信息栏 -->
     <div class="info-bar">
       <div class="tag number">
-        收录: {{ wordsArr.length }} 个  整理中...
+        累积收录: {{ wordsArr.length }} 个
       </div>
       <div class="tag offical-account">
         公众号: 奇怪的背单词
       </div>
-      <div class="tag">
-        5.2 夏
+      <div class="tag time">
+        夏 5.3
       </div>
     </div>
 
@@ -192,6 +192,9 @@ export default Vue.extend({
   height: 30px;
   justify-content: center;
   align-items: center;
+  .time {
+    background: rgb(240, 240, 228);
+  }
 }
 
 // 单词列表
@@ -244,6 +247,9 @@ export default Vue.extend({
   justify-content: center;
   /deep/.el-pagination .active {
     background: darken($color: $em-bg, $amount: 3)!important;
+    color: $main-color!important;
+  }
+  /deep/.el-pagination li:hover {
     color: $main-color!important;
   }
 }

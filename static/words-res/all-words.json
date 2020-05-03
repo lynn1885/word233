@@ -4,11 +4,16 @@
     "title": "天上的佛打坐, 民间的佛唠嗑",
     "stars": 4
   },
+  "gorgeous": {
+    "meaning": "a. 华丽的",
+    "title": "中国最华丽的寺庙",
+    "stars": 3
+  },
   "electron": {
     "meaning": "n. 电子",
     "title": "外国主持人教你三秒记住一个单词",
     "stars": 3,
-    "scope": "TOEFL | SAT | GMAT | CET6 | CET4 | 考研"
+    "range": "TOEFL | SAT | GMAT | CET6 | CET4 | 考研"
   },
   "chamber": {
     "meaning": "n. 房间",

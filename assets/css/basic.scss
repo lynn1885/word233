@@ -1,5 +1,10 @@
 @import "@/assets/css/var.scss";
 
+#__nuxt {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .tag {
   padding: 2px 6px;
   margin: 0px 2px;

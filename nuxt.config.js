@@ -11,7 +11,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '奇怪的背单词, 30秒记住一个单词' },
+      { hid: 'keywords', name: 'keywords', content: '奇怪的背单词, 背单词, 背单词方法, 30秒记住一个单词, 考研单词, 考研英语, 雅思单词, gre单词' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -25,7 +26,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#999'
+    color: '#777'
   },
   /*
   ** Global CSS

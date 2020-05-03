@@ -85,7 +85,6 @@ export default Vue.extend({
       curWordsArr: ['']
     }
     // word info
-
     await app.$axios.$get('/words-res/all-words.json')
       .then((res: any) => {
         result.wordsInfo = res
@@ -246,10 +245,6 @@ export default Vue.extend({
   /deep/.el-pagination .active {
     background: darken($color: $em-bg, $amount: 3)!important;
     color: $main-color!important;
-    font-weight: 300!important;
-  }
-  /deep/.el-pagination .number {
-    font-weight: 300!important;
   }
 }
 </style>

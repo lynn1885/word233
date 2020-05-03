@@ -1,4 +1,5 @@
-const port = 80
+const config = require('./config.js')
+console.log('baseUrl', `http://${config.address.host}:${config.address.port}`)
 
 module.exports = {
   mode: 'universal',
@@ -18,7 +19,7 @@ module.exports = {
   },
   server: {
     host: '0.0.0.0',
-    port // default: 3000
+    port: config.address.port
   },
   /*
   ** Customize the progress-bar color
@@ -56,7 +57,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: `http://localhost:${port}`
+    baseURL: `http://${config.address.host}:${config.address.port}`
   },
   /*
   ** Build configuration

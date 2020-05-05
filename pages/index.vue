@@ -7,7 +7,7 @@
         size="small"
         suffix-icon="el-icon-search"
         :fetch-suggestions="querySearch"
-        placeholder="搜索功能暂不可用哦, 持续开发中~ 单词也在整理中"
+        placeholder="搜索功能暂不可用哦, 持续开发整理中~"
         :trigger-on-focus="false"
       />
     </div>
@@ -20,7 +20,7 @@
         公众号: 奇怪的背单词
       </div>
       <div class="tag time">
-        夏 5.3
+        夏 5.5
       </div>
     </div>
 
@@ -237,6 +237,7 @@ export default Vue.extend({
     img {
       height: 80px;
       min-width: 100%;
+      animation: imgLoading 2s infinite alternate;
     }
   }
 }

@@ -106,13 +106,17 @@ export default Vue.extend({
   }
   // image
   img {
+    background: #eee;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    animation: imgLoading 2s infinite alternate;
     &.border {
       border: 2px solid #666;
     }
     &.original {
       width: auto;
+      max-width: 100%;
     }
     &.center {
       margin-left: 50%;

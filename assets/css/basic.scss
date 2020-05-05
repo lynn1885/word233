@@ -13,3 +13,8 @@
   font-size: 12px;
   color: #999;
 }
+
+@keyframes imgLoading {
+    from {background: #f6f6f6;}
+    to {background: #f2f2f2;}
+  }

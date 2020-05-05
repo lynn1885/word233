@@ -9,6 +9,16 @@
     "title": "小短篇",
     "stars": 4
   },
+  "vinegar": {
+    "meaning": "n. 醋",
+    "title": "喂你个醋",
+    "stars": 4
+  },
+  "liquid": {
+    "meaning": "n. 液体",
+    "title": "人体液化事件",
+    "stars": 3
+  },
   "folk": {
     "meaning": "a. 民间的",
     "title": "天上的佛打坐, 民间的佛唠嗑",
@@ -50,6 +60,11 @@
     "title": "我的一个大学室友死了",
     "stars": 3
   },
+  "tutor": {
+    "meaning": "n. 家教",
+    "title": "家教秃头人",
+    "stars": 3
+  },
   "soy": {
     "meaning": "n. 大豆",
     "title": "大豆淋蓑衣, 独钓寒江雪",
@@ -59,6 +74,11 @@
     "meaning": "n. 瑞士人",
     "title": "疫情期间的宿舍聊天",
     "stars": 4
+  },
+  "navy": {
+    "meaning": "n. 海军",
+    "title": "微博加v, 99%的人不知道的秘密",
+    "stars": 3
   },
   "charcoal": {
     "meaning": "n. 木炭",

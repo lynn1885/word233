@@ -132,6 +132,11 @@ export default Vue.extend({
     outline: none;
   }
 
+  // video
+  video {
+    width: 100%;
+  }
+
   // 文章
   .article {
     padding-bottom: 40px;
